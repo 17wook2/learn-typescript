@@ -11,3 +11,5 @@ https://www.inflearn.com/course/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED
     - [x] 타입스크립트 설정
     - [x] JS파일을 TS파일로 바꾸기
     - [x] tsc 명령어로 타입스크립트 컴파일
+
+
