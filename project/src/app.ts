@@ -1,24 +1,24 @@
 // @ts-check
 // utils
-function $(selector) {
+function $(selector : string) {
   return document.querySelector(selector);
 }
-function getUnixTimestamp(date) {
+function getUnixTimestamp(date : Date) {
   return new Date(date).getTime();
 }
-
+Element
 // DOM
-const confirmedTotal = $('.confirmed-total');
-const deathsTotal = $('.deaths');
-const recoveredTotal = $('.recovered');
-const lastUpdatedTime = $('.last-updated-time');
+const confirmedTotal = $('.confirmed-total') as HTMLSpanElement;
+const deathsTotal = $('.deaths') as HTMLParagraphElement;
+const recoveredTotal = $('.recovered') as HTMLParagraphElement;
+const lastUpdatedTime = $('.last-updated-time') as HTMLLIElement;
 const rankList = $('.rank-list');
 const deathsList = $('.deaths-list');
 const recoveredList = $('.recovered-list');
 const deathSpinner = createSpinnerElement('deaths-spinner');
 const recoveredSpinner = createSpinnerElement('recovered-spinner');
 
-function createSpinnerElement(id) {
+function createSpinnerElement(id : any) {
   const wrapperDiv = document.createElement('div');
   wrapperDiv.setAttribute('id', id);
   wrapperDiv.setAttribute(
@@ -43,7 +43,13 @@ function fetchCovidSummary() {
   return axios.get(url);
 }
 
-function fetchCountryInfo(countryCode, status) {
+enum CovidStatus {
+  Confirmed = 'confirmed',
+  Recovered = 'recovered',
+  Deaths = 'deaths',
+}
+
+function fetchCountryInfo(countryCode : string, status : CovidStatus) {
   // params: confirmed, recovered, deaths
   const url = `https://api.covid19api.com/country/${countryCode}/status/${status}`;
   return axios.get(url);
@@ -78,14 +84,14 @@ async function handleListClick(event) {
   clearRecoveredList();
   startLoadingAnimation();
   isDeathLoading = true;
-  const { data: deathResponse } = await fetchCountryInfo(selectedId, 'deaths');
+  const { data: deathResponse } = await fetchCountryInfo(selectedId, CovidStatus.Deaths);
   const { data: recoveredResponse } = await fetchCountryInfo(
     selectedId,
-    'recovered',
+    CovidStatus.Recovered,
   );
   const { data: confirmedResponse } = await fetchCountryInfo(
     selectedId,
-    'confirmed',
+    CovidStatus.Confirmed,
   );
   endLoadingAnimation();
   setDeathsList(deathResponse);
@@ -96,11 +102,11 @@ async function handleListClick(event) {
   isDeathLoading = false;
 }
 
-function setDeathsList(data) {
+function setDeathsList(data : any) {
   const sorted = data.sort(
-    (a, b) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date),
+    (a: any, b : any) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date),
   );
-  sorted.forEach(value => {
+  sorted.forEach((value: any) => {
     const li = document.createElement('li');
     li.setAttribute('class', 'list-item-b flex align-center');
     const span = document.createElement('span');
