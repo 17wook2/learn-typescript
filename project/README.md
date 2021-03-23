@@ -1,9 +1,13 @@
 ## 코로나 세계 현황판 만들기
-
-최종 프로젝트 폴더입니다
-
 ## 참고 자료
+https://www.inflearn.com/course/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%EC%A0%84/dashboard
 
-- [존스 홉킨스 코로나 현황](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6)
-- [Postman API](https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest#27454960-ea1c-4b91-a0b6-0468bb4e6712)
-- [Type Vue without Typescript](https://blog.usejournal.com/type-vue-without-typescript-b2b49210f0b)
+
+## Apply JS to TS
+
+1. 타입스크립트 기본 환경 구성
+    - [x] NPM 초기화
+    - [x] 타입스크립트 라이브러리 설치
+    - [x] 타입스크립트 설정
+    - [x] JS파일을 TS파일로 바꾸기
+    - [x] tsc 명령어로 타입스크립트 컴파일

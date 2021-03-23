@@ -1,3 +1,4 @@
+// @ts-check
 // utils
 function $(selector) {
   return document.querySelector(selector);
