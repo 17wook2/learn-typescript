@@ -21,3 +21,5 @@ https://www.inflearn.com/course/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED
     - babel, eslint, prettier 설정
 
 4. 외부 라이브러리 모듈화
+
+5. 'strict' 옵션 추가 후 타입 정의

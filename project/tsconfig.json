@@ -6,7 +6,9 @@
         "moduleResolution": "Node", // 모듈해석전략에 따라 classic 과 Node로 나뉜다.
         "lib": ["ES2015", "DOM", "DOM.Iterable"],
         "noImplicitAny": true,
-        "typeRoots": ["./types","./node_modules/@types"]
+        "typeRoots": ["./types","./node_modules/@types"],
+        "strict": true,
+        // "strictFunctionTypes": false,
     },
     "include": ["./src/**/*"] // 프로젝트를 기준으로 어떤 파일을 포함시킬것이냐, /**/* src아래의 모든 파일을 포함시키겠다
 }
